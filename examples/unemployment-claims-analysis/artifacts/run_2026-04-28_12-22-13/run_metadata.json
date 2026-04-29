@@ -1,0 +1,10 @@
+{
+  "phase": "pre",
+  "dataset": "benefit_payments",
+  "sample_size": 1000,
+  "confidence_score": 86.6,
+  "status": "YELLOW",
+  "structure_score": 68.0,
+  "governance_score": 97.0,
+  "timestamp": "2026-04-28T12:22:13.184346"
+}

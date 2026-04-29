@@ -1,0 +1,76 @@
+{
+  "mappings": [
+    {
+      "source": "bp_recid",
+      "target": "benefit_payment_id",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Primary key for benefit_payments",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_clmid",
+      "target": "claim_id",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_clmid \u2014 PAYMENT-CLAIM-REF",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_paydt",
+      "target": "paydt",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_paydt \u2014 PAYMENT-PROCESS-DATE",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_payam",
+      "target": "payment_amount",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_payam \u2014 PAYMENT-AMOUNT",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_methd",
+      "target": "methd",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_methd \u2014 PAYMENT-METHOD-CODE",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_wkedt",
+      "target": "wkedt",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_wkedt \u2014 PAYMENT-WEEK-END-DATE",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_chkno",
+      "target": "chkno",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_chkno \u2014 PAYMENT-CHECK-NUM",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    },
+    {
+      "source": "bp_stat",
+      "target": "status",
+      "target_table": "benefit_payments",
+      "type": "rename",
+      "rationale": "Source: bp_stat \u2014 PAYMENT-STATUS-CODE",
+      "confidence": 1.0,
+      "table": "benefit_payments"
+    }
+  ]
+}

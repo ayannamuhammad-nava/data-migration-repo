@@ -1,0 +1,61 @@
+{
+  "source_table": "bp_recid",
+  "generated_at": "2026-04-24T17:57:04.917520+00:00",
+  "legacy_column_count": 8,
+  "modern_table_count": 1,
+  "columns": {
+    "renamed": {
+      "bp_recid": {
+        "target_table": "benefit_payments",
+        "target_column": "benefit_payment_id",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_clmid": {
+        "target_table": "benefit_payments",
+        "target_column": "claim_id",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_paydt": {
+        "target_table": "benefit_payments",
+        "target_column": "paydt",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_payam": {
+        "target_table": "benefit_payments",
+        "target_column": "payment_amount",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_methd": {
+        "target_table": "benefit_payments",
+        "target_column": "methd",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_wkedt": {
+        "target_table": "benefit_payments",
+        "target_column": "wkedt",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_chkno": {
+        "target_table": "benefit_payments",
+        "target_column": "chkno",
+        "transform": null,
+        "pii_action": null
+      },
+      "bp_stat": {
+        "target_table": "benefit_payments",
+        "target_column": "status",
+        "transform": null,
+        "pii_action": null
+      }
+    },
+    "transformed": {},
+    "archived": [],
+    "unmapped": []
+  }
+}

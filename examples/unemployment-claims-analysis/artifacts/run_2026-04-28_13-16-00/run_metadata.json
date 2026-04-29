@@ -1,0 +1,7 @@
+{
+  "phase": "post",
+  "dataset": "claims",
+  "confidence_score": 80.0,
+  "status": "YELLOW",
+  "timestamp": "2026-04-28T13:16:00.348545"
+}

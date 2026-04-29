@@ -1,0 +1,4 @@
+category,item,status,detail
+PII,cl_ssn,VIOLATION,Plaintext PII detected
+PII,cl_dob,VIOLATION,Plaintext PII detected
+Null,cl_emal,WARNING,Exceeds null threshold

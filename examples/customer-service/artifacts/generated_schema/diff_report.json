@@ -1,0 +1,257 @@
+{
+  "source_table": "ct_recid",
+  "generated_at": "2026-04-28T20:54:26.270295+00:00",
+  "legacy_column_count": 42,
+  "modern_table_count": 3,
+  "columns": {
+    "renamed": {
+      "ct_recid": {
+        "target_table": "ct_records",
+        "target_column": "ct_record_id",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_fnam": {
+        "target_table": "ct_records",
+        "target_column": "first_name",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_mnam": {
+        "target_table": "ct_records",
+        "target_column": "middle_name",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_lnam": {
+        "target_table": "ct_records",
+        "target_column": "last_name",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_sufx": {
+        "target_table": "ct_records",
+        "target_column": "name_suffix",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_dob": {
+        "target_table": "ct_records",
+        "target_column": "date_of_birth",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_gndr": {
+        "target_table": "ct_records",
+        "target_column": "gender",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_ethn": {
+        "target_table": "ct_records",
+        "target_column": "ethnicity",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_adtyp": {
+        "target_table": "ct_records",
+        "target_column": "address_type",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_emrg": {
+        "target_table": "ct_records",
+        "target_column": "emergency_contact_name",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_erel": {
+        "target_table": "ct_records",
+        "target_column": "emergency_contact_relation",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_dln": {
+        "target_table": "ct_records",
+        "target_column": "drivers_license_number",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_dpnds": {
+        "target_table": "ct_records",
+        "target_column": "dependents_count",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_lang": {
+        "target_table": "ct_records",
+        "target_column": "language_preference",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_vetf": {
+        "target_table": "ct_records",
+        "target_column": "is_veteran",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_disf": {
+        "target_table": "ct_records",
+        "target_column": "is_disabled",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_crtdt": {
+        "target_table": "ct_records",
+        "target_column": "created_at",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_upddt": {
+        "target_table": "ct_records",
+        "target_column": "updated_at",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_srccd": {
+        "target_table": "ct_records",
+        "target_column": "source_code",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_fil1": {
+        "target_table": "ct_records",
+        "target_column": "fil1",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_fil2": {
+        "target_table": "ct_records",
+        "target_column": "fil2",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_adr1": {
+        "target_table": "ct_record_addresses",
+        "target_column": "address_line1",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_adr2": {
+        "target_table": "ct_record_addresses",
+        "target_column": "address_line2",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_city": {
+        "target_table": "ct_record_addresses",
+        "target_column": "city",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_st": {
+        "target_table": "ct_record_addresses",
+        "target_column": "state",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_zip": {
+        "target_table": "ct_record_addresses",
+        "target_column": "zip_code",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_madr1": {
+        "target_table": "ct_record_addresses",
+        "target_column": "mailing_address_line1",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_madr2": {
+        "target_table": "ct_record_addresses",
+        "target_column": "mailing_address_line2",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_mcity": {
+        "target_table": "ct_record_addresses",
+        "target_column": "mailing_city",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_mst": {
+        "target_table": "ct_record_addresses",
+        "target_column": "mailing_state",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_mzip": {
+        "target_table": "ct_record_addresses",
+        "target_column": "mailing_zip_code",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_dlst": {
+        "target_table": "ct_record_addresses",
+        "target_column": "drivers_license_state",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_mstat": {
+        "target_table": "ct_record_addresses",
+        "target_column": "marital_status",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_stat": {
+        "target_table": "ct_record_addresses",
+        "target_column": "marital_status",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_ptel": {
+        "target_table": "ct_record_contacts",
+        "target_column": "primary_phone",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_mtel": {
+        "target_table": "ct_record_contacts",
+        "target_column": "mobile_phone",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_wtel": {
+        "target_table": "ct_record_contacts",
+        "target_column": "work_phone",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_emal": {
+        "target_table": "ct_record_contacts",
+        "target_column": "email",
+        "transform": null,
+        "pii_action": null
+      },
+      "ct_etel": {
+        "target_table": "ct_record_contacts",
+        "target_column": "emergency_contact_phone",
+        "transform": null,
+        "pii_action": null
+      }
+    },
+    "transformed": {
+      "ct_ssn": {
+        "target_table": "ct_records",
+        "target_column": "ssn_hash",
+        "transform": "SHA-256",
+        "pii_action": "hash"
+      }
+    },
+    "archived": [],
+    "unmapped": [
+      "ct_bact",
+      "ct_brtn"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+datasets:
+- generated: true
+  generation_confidence: 0.8
+  legacy_table: contacts
+  modern_tables:
+  - key: ct_record_id
+    role: primary
+    table: ct_records
+  - fk: ct_record_id
+    key: ct_record_addresse_id
+    role: child
+    table: ct_record_addresses
+  - fk: ct_record_id
+    key: ct_record_contact_id
+    role: child
+    table: ct_record_contacts
+  name: contacts
+  primary_key: ct_recid

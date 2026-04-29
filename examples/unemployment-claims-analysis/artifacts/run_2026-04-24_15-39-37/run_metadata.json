@@ -1,0 +1,7 @@
+{
+  "phase": "post",
+  "dataset": "benefit_payments",
+  "confidence_score": 60.0,
+  "status": "RED",
+  "timestamp": "2026-04-24T15:39:37.386044"
+}

@@ -1,0 +1,9 @@
+{
+  "phase": "prove",
+  "dataset": "claims",
+  "pre_score": "N/A",
+  "post_score": "N/A",
+  "confidence_score": 0,
+  "status": "INCOMPLETE",
+  "timestamp": "2026-04-28T12:00:49.769270"
+}

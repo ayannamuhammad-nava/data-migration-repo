@@ -1,0 +1,10 @@
+{
+  "phase": "pre",
+  "dataset": "claims",
+  "sample_size": 1000,
+  "confidence_score": 79.2,
+  "status": "YELLOW",
+  "structure_score": 48.0,
+  "governance_score": 100.0,
+  "timestamp": "2026-04-28T12:22:12.767655"
+}

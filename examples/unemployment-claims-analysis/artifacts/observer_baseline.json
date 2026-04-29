@@ -1,0 +1,323 @@
+{
+  "captured_at": "2026-04-28T16:02:26.797366+00:00",
+  "tables": {
+    "claimants": {
+      "row_count": 9,
+      "schema": [
+        {
+          "column_name": "claimant_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "first_name",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "last_name",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "ssn_hash",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "date_of_birth",
+          "data_type": "date"
+        },
+        {
+          "column_name": "phone_number",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "email",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "address_line1",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "city",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "state",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "zip_code",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "claimant_status",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "registered_at",
+          "data_type": "timestamp without time zone"
+        },
+        {
+          "column_name": "is_deceased",
+          "data_type": "boolean"
+        },
+        {
+          "column_name": "cl_bact",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "legacy_system_ref",
+          "data_type": "character varying"
+        }
+      ],
+      "null_percentages": {
+        "claimant_id": 0.0,
+        "first_name": 0.0,
+        "last_name": 0.0,
+        "ssn_hash": 0.0,
+        "date_of_birth": 0.0,
+        "phone_number": 0.0,
+        "email": 22.22222222222222,
+        "address_line1": 0.0,
+        "city": 0.0,
+        "state": 0.0,
+        "zip_code": 0.0,
+        "claimant_status": 0.0,
+        "registered_at": 0.0,
+        "is_deceased": 0.0,
+        "cl_bact": 77.77777777777777,
+        "legacy_system_ref": 0.0
+      },
+      "distinct_counts": {
+        "claimant_id": 9,
+        "first_name": 9,
+        "last_name": 9,
+        "ssn_hash": 9,
+        "date_of_birth": 9,
+        "phone_number": 9,
+        "email": 7,
+        "address_line1": 9,
+        "city": 5,
+        "state": 5,
+        "zip_code": 5,
+        "claimant_status": 4,
+        "registered_at": 9,
+        "is_deceased": 2,
+        "cl_bact": 2,
+        "legacy_system_ref": 9
+      }
+    },
+    "employers": {
+      "row_count": 5,
+      "schema": [
+        {
+          "column_name": "employer_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "employer_name",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "employer_ein",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "industry",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "address_line1",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "city",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "state",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "zip_code",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "phone_number",
+          "data_type": "bigint"
+        },
+        {
+          "column_name": "employer_status",
+          "data_type": "character varying"
+        }
+      ],
+      "null_percentages": {
+        "employer_id": 0.0,
+        "employer_name": 0.0,
+        "employer_ein": 0.0,
+        "industry": 0.0,
+        "address_line1": 0.0,
+        "city": 0.0,
+        "state": 0.0,
+        "zip_code": 0.0,
+        "phone_number": 0.0,
+        "employer_status": 0.0
+      },
+      "distinct_counts": {
+        "employer_id": 5,
+        "employer_name": 5,
+        "employer_ein": 5,
+        "industry": 5,
+        "address_line1": 5,
+        "city": 5,
+        "state": 5,
+        "zip_code": 5,
+        "phone_number": 5,
+        "employer_status": 1
+      }
+    },
+    "claims": {
+      "row_count": 12,
+      "schema": [
+        {
+          "column_name": "claim_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "claimant_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "employer_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "separation_reason",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "filing_date",
+          "data_type": "date"
+        },
+        {
+          "column_name": "benefit_year_start",
+          "data_type": "date"
+        },
+        {
+          "column_name": "benefit_year_end",
+          "data_type": "date"
+        },
+        {
+          "column_name": "weekly_benefit_amount",
+          "data_type": "numeric"
+        },
+        {
+          "column_name": "max_benefit_amount",
+          "data_type": "numeric"
+        },
+        {
+          "column_name": "total_paid",
+          "data_type": "numeric"
+        },
+        {
+          "column_name": "weeks_claimed",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "claim_status",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "updated_at",
+          "data_type": "timestamp without time zone"
+        }
+      ],
+      "null_percentages": {
+        "claim_id": 0.0,
+        "claimant_id": 0.0,
+        "employer_id": 0.0,
+        "separation_reason": 0.0,
+        "filing_date": 0.0,
+        "benefit_year_start": 0.0,
+        "benefit_year_end": 0.0,
+        "weekly_benefit_amount": 0.0,
+        "max_benefit_amount": 0.0,
+        "total_paid": 0.0,
+        "weeks_claimed": 0.0,
+        "claim_status": 0.0,
+        "updated_at": 0.0
+      },
+      "distinct_counts": {
+        "claim_id": 12,
+        "claimant_id": 9,
+        "employer_id": 5,
+        "separation_reason": 9,
+        "filing_date": 12,
+        "benefit_year_start": 12,
+        "benefit_year_end": 12,
+        "weekly_benefit_amount": 11,
+        "max_benefit_amount": 11,
+        "total_paid": 10,
+        "weeks_claimed": 9,
+        "claim_status": 4,
+        "updated_at": 10
+      }
+    },
+    "benefit_payments": {
+      "row_count": 14,
+      "schema": [
+        {
+          "column_name": "payment_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "claim_id",
+          "data_type": "integer"
+        },
+        {
+          "column_name": "payment_date",
+          "data_type": "date"
+        },
+        {
+          "column_name": "payment_amount",
+          "data_type": "numeric"
+        },
+        {
+          "column_name": "payment_method",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "week_ending_date",
+          "data_type": "date"
+        },
+        {
+          "column_name": "payment_status",
+          "data_type": "character varying"
+        },
+        {
+          "column_name": "check_number",
+          "data_type": "character varying"
+        }
+      ],
+      "null_percentages": {
+        "payment_id": 0.0,
+        "claim_id": 0.0,
+        "payment_date": 0.0,
+        "payment_amount": 0.0,
+        "payment_method": 0.0,
+        "week_ending_date": 0.0,
+        "payment_status": 0.0,
+        "check_number": 100.0
+      },
+      "distinct_counts": {
+        "payment_id": 14,
+        "claim_id": 6,
+        "payment_date": 14,
+        "payment_amount": 6,
+        "payment_method": 2,
+        "week_ending_date": 14,
+        "payment_status": 2,
+        "check_number": 0
+      }
+    }
+  }
+}

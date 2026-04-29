@@ -1,0 +1,10 @@
+{
+  "phase": "pre",
+  "dataset": "claimants",
+  "sample_size": 500,
+  "confidence_score": 91.8,
+  "status": "GREEN",
+  "structure_score": 86.0,
+  "governance_score": 87.0,
+  "timestamp": "2026-04-28T13:13:11.273194"
+}

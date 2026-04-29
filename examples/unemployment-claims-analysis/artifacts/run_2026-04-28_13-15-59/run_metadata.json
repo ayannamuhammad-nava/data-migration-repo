@@ -1,0 +1,10 @@
+{
+  "phase": "pre",
+  "dataset": "employers",
+  "sample_size": 1000,
+  "confidence_score": 99.6,
+  "status": "GREEN",
+  "structure_score": 99.0,
+  "governance_score": 100.0,
+  "timestamp": "2026-04-28T13:15:59.942886"
+}

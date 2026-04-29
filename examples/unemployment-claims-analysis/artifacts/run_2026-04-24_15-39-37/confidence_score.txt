@@ -1,0 +1,2 @@
+Confidence Score: 60.0/100
+Status: RED

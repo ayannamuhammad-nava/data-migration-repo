@@ -1,0 +1,9 @@
+{
+  "phase": "prove",
+  "dataset": "benefit_payments",
+  "pre_score": 86.6,
+  "post_score": 60.0,
+  "confidence_score": 73.3,
+  "status": "YELLOW",
+  "timestamp": "2026-04-28T12:00:50.054925"
+}

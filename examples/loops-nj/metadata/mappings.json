@@ -1,0 +1,388 @@
+{
+  "mappings": [
+    {
+      "source": "cl_recid",
+      "target": "claimant_id",
+      "rationale": "Renamed from cl_recid to claimant_id to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_fnam",
+      "target": "first_name",
+      "rationale": "Renamed from cl_fnam to first_name to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_lnam",
+      "target": "last_name",
+      "rationale": "Renamed from cl_lnam to last_name to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_ssn",
+      "target": "ssn_hash",
+      "rationale": "SHA-256 hash for HIPAA compliance \u2014 raw SSN must NEVER be written to modern system; duplicate SSNs indicate identity conflicts requiring manual resolution before migration proceeds",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "transform"
+    },
+    {
+      "source": "cl_dob",
+      "target": "date_of_birth",
+      "rationale": "Renamed from cl_dob to date_of_birth to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_phon",
+      "target": "phone_number",
+      "rationale": "Renamed from cl_phon to phone_number to align with modern naming conventions",
+      "confidence": 0.89,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_emal",
+      "target": "email",
+      "rationale": "Renamed from cl_emal to email to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_adr1",
+      "target": "address_line1",
+      "rationale": "Renamed from cl_adr1 to address_line1 to align with modern naming conventions",
+      "confidence": 0.9,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_city",
+      "target": "city",
+      "rationale": "Renamed from cl_city to city to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_st",
+      "target": "state",
+      "rationale": "Renamed from cl_st to state to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_zip",
+      "target": "zip_code",
+      "rationale": "Renamed from cl_zip to zip_code to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_bact",
+      "target": null,
+      "rationale": "Bank account number NOT migrated \u2014 PCI-DSS regulated financial identifier; must be archived to encrypted vault and claimants re-enrolled through secure portal. Archive alongside cl_brtn. Any plaintext exposure is a PCI-DSS Level 1 violation. Do NOT include in ETL pipeline.",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "archived"
+    },
+    {
+      "source": "cl_brtn",
+      "target": null,
+      "rationale": "Bank routing number NOT migrated \u2014 PCI-DSS regulated financial identifier. Archive alongside cl_bact to encrypted vault. Routing numbers combined with account numbers constitute full banking credentials \u2014 any plaintext exposure is a PCI-DSS Level 1 violation. Do NOT include in ETL pipeline.",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "archived"
+    },
+    {
+      "source": "cl_stat",
+      "target": "claimant_status",
+      "rationale": "Status codes normalised: 'ACTIVE'\u2192'active', 'INACTIVE'\u2192'inactive', 'SUSPENDED'\u2192'suspended'. Legacy freetext values must be mapped; unmapped values default to 'pending_review' and flagged for manual triage.",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "transform"
+    },
+    {
+      "source": "cl_rgdt",
+      "target": "registered_at",
+      "rationale": "Renamed from cl_rgdt to registered_at to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_dcsd",
+      "target": "is_deceased",
+      "rationale": "Renamed from cl_dcsd to is_deceased to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "rename"
+    },
+    {
+      "source": "cl_fil1",
+      "target": null,
+      "rationale": "Legacy filler/padding field with no business meaning \u2014 safe to drop. Verify no application code reads this field before finalising ETL.",
+      "confidence": 1.0,
+      "table": "claimants",
+      "type": "removed"
+    },
+    {
+      "source": "er_recid",
+      "target": "employer_id",
+      "rationale": "er_recid (legacy integer sequence) migrated to UUID-based employer_id in modern system; ETL must generate stable UUIDs and update all FK references in claims and payments before cutover.",
+      "confidence": 1.0,
+      "table": "employers",
+      "type": "transform"
+    },
+    {
+      "source": "er_name",
+      "target": "employer_name",
+      "rationale": "Renamed from er_name to employer_name for improved clarity and naming consistency",
+      "confidence": 0.87,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_ein",
+      "target": "employer_ein",
+      "rationale": "Renamed from er_ein to employer_ein to align with modern naming conventions",
+      "confidence": 0.86,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_ind",
+      "target": "industry",
+      "rationale": "Renamed from er_ind to industry to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_adr1",
+      "target": "address_line1",
+      "rationale": "Renamed from er_adr1 to address_line1 to align with modern naming conventions",
+      "confidence": 0.9,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_city",
+      "target": "city",
+      "rationale": "Renamed from er_city to city to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_st",
+      "target": "state",
+      "rationale": "Renamed from er_st to state to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_zip",
+      "target": "zip_code",
+      "rationale": "Renamed from er_zip to zip_code to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_phon",
+      "target": "phone_number",
+      "rationale": "Renamed from er_phon to phone_number to align with modern naming conventions",
+      "confidence": 0.89,
+      "table": "employers",
+      "type": "rename"
+    },
+    {
+      "source": "er_stat",
+      "target": "employer_status",
+      "rationale": "Employer status codes normalised to modern enum values; legacy freetext statuses require mapping table review before ETL runs.",
+      "confidence": 1.0,
+      "table": "employers",
+      "type": "transform"
+    },
+    {
+      "source": "cm_recid",
+      "target": "claim_id",
+      "rationale": "Renamed from cm_recid to claim_id to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_clmnt",
+      "target": "claimant_id",
+      "rationale": "Renamed from cm_clmnt to claimant_id to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_emplr",
+      "target": "employer_id",
+      "rationale": "Renamed to employer_id as FK to employers table; orphan risk if employer records not fully migrated first \u2014 run employer migration before claims ETL.",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_seprs",
+      "target": "separation_reason",
+      "rationale": "Renamed from cm_seprs to separation_reason to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_fildt",
+      "target": "filing_date",
+      "rationale": "Renamed from cm_fildt to filing_date to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_bystr",
+      "target": "benefit_year_start",
+      "rationale": "Renamed from cm_bystr to benefit_year_start; date format normalised from YYYYMMDD integer to ISO-8601 date string \u2014 ETL must parse and reformat all values.",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "transform"
+    },
+    {
+      "source": "cm_byend",
+      "target": "benefit_year_end",
+      "rationale": "Renamed from cm_byend to benefit_year_end to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_wkamt",
+      "target": "weekly_benefit_amount",
+      "rationale": "Renamed from cm_wkamt to weekly_benefit_amount to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_mxamt",
+      "target": "max_benefit_amount",
+      "rationale": "Renamed from cm_mxamt to max_benefit_amount to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_totpd",
+      "target": "total_paid",
+      "rationale": "Renamed from cm_totpd to total_paid to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_wkcnt",
+      "target": "weeks_claimed",
+      "rationale": "Renamed from cm_wkcnt to weeks_claimed to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "cm_stat",
+      "target": "claim_status",
+      "rationale": "Claim status normalised to modern enum; CRITICAL business rule: claims with cm_stat='PAID' where cm_totpd < cm_mxamt indicate potential overpayment \u2014 flag for compliance review before migration completes.",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "transform"
+    },
+    {
+      "source": "cm_lupdt",
+      "target": "updated_at",
+      "rationale": "Renamed from cm_lupdt to updated_at to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "claims",
+      "type": "rename"
+    },
+    {
+      "source": "bp_recid",
+      "target": "payment_id",
+      "rationale": "Renamed from bp_recid to payment_id to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "rename"
+    },
+    {
+      "source": "bp_clmid",
+      "target": "claim_id",
+      "rationale": "Renamed from bp_clmid to claim_id to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "rename"
+    },
+    {
+      "source": "bp_paydt",
+      "target": "payment_date",
+      "rationale": "Renamed from bp_paydt to payment_date to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "rename"
+    },
+    {
+      "source": "bp_payam",
+      "target": "payment_amount",
+      "rationale": "Renamed from bp_payam to payment_amount to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "rename"
+    },
+    {
+      "source": "bp_methd",
+      "target": "payment_method",
+      "rationale": "Renamed from bp_methd to payment_method to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "rename"
+    },
+    {
+      "source": "bp_wkedt",
+      "target": "week_ending_date",
+      "rationale": "Renamed from bp_wkedt to week_ending_date to align with modern naming conventions",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "rename"
+    },
+    {
+      "source": "bp_stat",
+      "target": "payment_status",
+      "rationale": "Payment status normalised to modern enum values ('ISSUED', 'CLEARED', 'VOIDED'); legacy 'CANC' code maps to 'VOIDED' \u2014 validate all payment records before and after transform.",
+      "confidence": 1.0,
+      "table": "benefit_payments",
+      "type": "transform"
+    },
+    {
+      "source": "bp_chkno",
+      "target": "check_number",
+      "rationale": "Renamed from bp_chkno to check_number to align with modern naming conventions",
+      "confidence": 0.89,
+      "table": "benefit_payments",
+      "type": "rename"
+    }
+  ]
+}

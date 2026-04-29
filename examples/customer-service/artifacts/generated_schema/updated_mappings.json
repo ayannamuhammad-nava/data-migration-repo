@@ -1,0 +1,364 @@
+{
+  "mappings": [
+    {
+      "source": "ct_recid",
+      "target": "ct_record_id",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Primary key for ct_records",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_fnam",
+      "target": "first_name",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_fnam \u2014 CONTACT-FIRST-NAME",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_mnam",
+      "target": "middle_name",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_mnam \u2014 CONTACT-MIDDLE-NAME",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_lnam",
+      "target": "last_name",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_lnam \u2014 CONTACT-LAST-NAME",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_sufx",
+      "target": "name_suffix",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_sufx \u2014 CONTACT-NAME-SUFFIX",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_ssn",
+      "target": "ssn_hash",
+      "target_table": "ct_records",
+      "type": "transform",
+      "rationale": "Source: ct_ssn (SHA-256) PII: hash \u2014 CONTACT-SSN",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_dob",
+      "target": "date_of_birth",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_dob \u2014 CONTACT-DATE-OF-BIRTH",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_gndr",
+      "target": "gender",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_gndr \u2014 CONTACT-GENDER-CODE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_ethn",
+      "target": "ethnicity",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_ethn \u2014 CONTACT-ETHNICITY",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_adtyp",
+      "target": "address_type",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_adtyp \u2014 CONTACT-ADDR-TYPE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_emrg",
+      "target": "emergency_contact_name",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_emrg \u2014 CONTACT-EMERGENCY-NAME",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_erel",
+      "target": "emergency_contact_relation",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_erel \u2014 CONTACT-EMERGENCY-RELATION",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_dln",
+      "target": "drivers_license_number",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_dln \u2014 CONTACT-DRIVERS-LICENSE-NUM",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_dpnds",
+      "target": "dependents_count",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_dpnds \u2014 CONTACT-DEPENDENTS-COUNT",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_lang",
+      "target": "language_preference",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_lang \u2014 CONTACT-LANGUAGE-PREF",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_vetf",
+      "target": "is_veteran",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_vetf \u2014 CONTACT-VETERAN-FLAG",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_disf",
+      "target": "is_disabled",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_disf \u2014 CONTACT-DISABILITY-FLAG",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_crtdt",
+      "target": "created_at",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_crtdt \u2014 CONTACT-CREATED-DATE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_upddt",
+      "target": "updated_at",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_upddt \u2014 CONTACT-UPDATED-DATE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_srccd",
+      "target": "source_code",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_srccd \u2014 CONTACT-SOURCE-CODE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_fil1",
+      "target": "fil1",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_fil1 \u2014 FILLER-1",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_fil2",
+      "target": "fil2",
+      "target_table": "ct_records",
+      "type": "rename",
+      "rationale": "Source: ct_fil2 \u2014 FILLER-2",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_adr1",
+      "target": "address_line1",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_adr1 \u2014 CONTACT-STREET-ADDR-1",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_adr2",
+      "target": "address_line2",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_adr2 \u2014 CONTACT-STREET-ADDR-2",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_city",
+      "target": "city",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_city \u2014 CONTACT-CITY-NAME",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_st",
+      "target": "state",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_st \u2014 CONTACT-STATE-CODE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_zip",
+      "target": "zip_code",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_zip \u2014 CONTACT-ZIP-CODE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_madr1",
+      "target": "mailing_address_line1",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_madr1 \u2014 CONTACT-MAIL-ADDR-1",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_madr2",
+      "target": "mailing_address_line2",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_madr2 \u2014 CONTACT-MAIL-ADDR-2",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_mcity",
+      "target": "mailing_city",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_mcity \u2014 CONTACT-MAIL-CITY",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_mst",
+      "target": "mailing_state",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_mst \u2014 CONTACT-MAIL-STATE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_mzip",
+      "target": "mailing_zip_code",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_mzip \u2014 CONTACT-MAIL-ZIP",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_dlst",
+      "target": "drivers_license_state",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_dlst \u2014 CONTACT-DL-STATE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_mstat",
+      "target": "marital_status",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_mstat \u2014 CONTACT-MARITAL-STATUS",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_stat",
+      "target": "marital_status",
+      "target_table": "ct_record_addresses",
+      "type": "rename",
+      "rationale": "Source: ct_stat \u2014 CONTACT-STATUS-CODE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_ptel",
+      "target": "primary_phone",
+      "target_table": "ct_record_contacts",
+      "type": "rename",
+      "rationale": "Source: ct_ptel \u2014 CONTACT-PRIMARY-PHONE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_mtel",
+      "target": "mobile_phone",
+      "target_table": "ct_record_contacts",
+      "type": "rename",
+      "rationale": "Source: ct_mtel \u2014 CONTACT-MOBILE-PHONE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_wtel",
+      "target": "work_phone",
+      "target_table": "ct_record_contacts",
+      "type": "rename",
+      "rationale": "Source: ct_wtel \u2014 CONTACT-WORK-PHONE",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_emal",
+      "target": "email",
+      "target_table": "ct_record_contacts",
+      "type": "rename",
+      "rationale": "Source: ct_emal \u2014 CONTACT-EMAIL-ADDR",
+      "confidence": 1.0,
+      "table": "contacts"
+    },
+    {
+      "source": "ct_etel",
+      "target": "emergency_contact_phone",
+      "target_table": "ct_record_contacts",
+      "type": "rename",
+      "rationale": "Source: ct_etel \u2014 CONTACT-EMERGENCY-PHONE",
+      "confidence": 1.0,
+      "table": "contacts"
+    }
+  ]
+}

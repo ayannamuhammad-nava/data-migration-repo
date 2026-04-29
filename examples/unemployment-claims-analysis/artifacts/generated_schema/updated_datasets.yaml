@@ -1,0 +1,10 @@
+datasets:
+- generated: true
+  generation_confidence: 0.9
+  legacy_table: benefit_payments
+  modern_tables:
+  - key: benefit_payment_id
+    role: primary
+    table: benefit_payments
+  name: benefit_payments
+  primary_key: bp_recid
