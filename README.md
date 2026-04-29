@@ -21,19 +21,30 @@ cd YOUR-REPO
 ```
 This installs the toolkit, starts PostgreSQL + OpenMetadata, and creates the databases. Takes ~3 minutes on first run.
 
-### 3. Create your project
-```bash
-.venv/bin/dm init my-project
-```
-Edit `projects/my-project/project.yaml` with your database connections and dataset names.
+### 3. Bootstrap your project (one command)
 
-### 4. Load your COBOL data
+Place your COBOL data files (SQL schemas, data loads, copybooks) in a folder, then run:
+
 ```bash
-docker exec -e PGPASSWORD=secret123 dm_postgres psql -U app -d legacy_db -f /path/to/your/schema.sql
-docker exec -e PGPASSWORD=secret123 dm_postgres psql -U app -d legacy_db -f /path/to/your/data.sql
+.venv/bin/dm bootstrap my-project --data /path/to/your/cobol/files
 ```
 
-### 5. Run the pipeline
+This single command:
+- Scaffolds the project with `project.yaml`
+- Scans your folder for SQL files and COBOL copybooks
+- Auto-detects table and column definitions
+- Parses copybook descriptions for field metadata
+- Creates databases and loads data into PostgreSQL
+- Registers tables in OpenMetadata with column descriptions
+- Configures `project.yaml` with your datasets and connections
+
+**Your data folder should contain:**
+- `create_*.sql` — CREATE TABLE statements for legacy schema
+- `load_*.sql` — INSERT statements with data
+- `create_*_modern.sql` — (optional) modern target schema
+- `*.cpy` — (optional) COBOL copybook for field descriptions
+
+### 4. Run the pipeline
 ```bash
 dm=.venv/bin/dm
 $dm rationalize -p projects/my-project
@@ -48,7 +59,7 @@ $dm observe --set-baseline -p projects/my-project
 $dm status -p projects/my-project
 ```
 
-### 6. Launch the dashboard
+### 5. Launch the dashboard
 ```bash
 .venv/bin/streamlit run dashboard.py --server.headless true -- --project projects/my-project
 ```
