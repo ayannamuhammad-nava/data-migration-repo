@@ -22,6 +22,11 @@ LEGACY DATABASE (COBOL/DB2)
   1. RATIONALIZE -----> Which tables are worth migrating?
         |                Scores each table on usage, lineage, freshness.
         |                Recommends: Migrate / Review / Archive.
+        |
+        |  NOTE: Steps 1-3 can be replaced with `dm bootstrap <project-name>
+        |  <path-to-cobol-folder>`. This one-command setup scans for SQL and
+        |  copybook files, loads data into PostgreSQL, registers tables in
+        |  OpenMetadata, and generates project.yaml — zero manual config.
         v
   2. DISCOVER ----------> What does this data look like?
         |                Pulls schemas, column profiles, PII tags,
@@ -135,7 +140,7 @@ The demo data includes 13 intentional data quality issues (duplicate SSNs, orpha
 |---------------------|-------------|
 | **Step through the full process hands-on** | [WALKTHROUGH.md](WALKTHROUGH.md) — 19 detailed steps with every command, output, and fix |
 | **Understand the technical details** | [README.md](README.md) — Architecture, CLI reference, plugin system, AI integration |
-| **Just run it** | `dm init my-project` then follow the Quick Start in [README.md](README.md#quick-start-bootstrap-a-new-project) |
+| **Just run it** | `dm bootstrap my-project /path/to/cobol-data` — one command replaces steps 3-6 (scaffold, load data, register in OpenMetadata, configure project.yaml). See [README.md](README.md#quick-start-bootstrap-a-new-project) |
 
 ## Requirements
 

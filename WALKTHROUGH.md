@@ -8,6 +8,7 @@ This document captures every step taken to set up the **Lockpicks Data Migration
 
 1. [Project Initialization](#1-project-initialization)
 2. [Install the DM CLI](#2-install-the-dm-cli)
+- [Alternative: Bootstrap (Replaces Steps 3-6)](#alternative-bootstrap-replaces-steps-3-6)
 3. [Scaffold a Migration Project](#3-scaffold-a-migration-project)
 4. [Start Infrastructure (PostgreSQL + OpenMetadata)](#4-start-infrastructure-postgresql--openmetadata)
 5. [Load Legacy & Modern Demo Data](#5-load-legacy--modern-demo-data)
@@ -71,6 +72,7 @@ This installs the `dm` CLI entry point (defined in `pyproject.toml` as `dm = "dm
 | Command | Description |
 |---------|-------------|
 | `dm init` | Scaffold a new migration project |
+| `dm bootstrap` | One-command project setup: scans COBOL folder, loads data, registers in OpenMetadata, configures project.yaml |
 | `dm discover` | Introspect databases and generate metadata |
 | `dm rationalize` | Analyze legacy catalog and recommend migration scope |
 | `dm generate-schema` | Generate normalized modern schema from enriched metadata |
@@ -79,6 +81,26 @@ This installs the `dm` CLI entry point (defined in `pyproject.toml` as `dm = "dm
 | `dm prove` | Generate migration proof report |
 | `dm dashboard` | Launch the Streamlit dashboard |
 | `dm status` | Show latest run scores across all datasets |
+
+---
+
+## Alternative: Bootstrap (Replaces Steps 3-6)
+
+Instead of manually scaffolding, starting infrastructure, loading data, and registering tables (steps 3-6), you can use `dm bootstrap` to do it all in one command:
+
+```bash
+.venv/bin/dm bootstrap unemployment-claims-analysis /path/to/unemployment-claims-project
+```
+
+**What it does:**
+1. Scans the provided folder for SQL scripts and COBOL copybook files
+2. Loads legacy and modern data into PostgreSQL
+3. Registers all discovered tables in OpenMetadata (with column definitions from copybooks)
+4. Generates a fully configured `project.yaml` with connections, datasets, and OpenMetadata settings
+
+**No manual configuration needed.** The bootstrap command infers database names, table structures, and dataset mappings from the files it finds. After bootstrap completes, skip ahead to [Step 7: Run Migration Rationalization](#7-run-migration-rationalization).
+
+If you prefer manual control over each step, continue with steps 3-6 below.
 
 ---
 
@@ -586,6 +608,7 @@ STREAMLIT_BROWSER_GATHER_USAGE_STATS=false \
   - **Compliance** — Compliance Checklist (pass/fail), Readiness Report, Governance Report, Schema Diff, Risk Assessment with score breakdown
   - **Quality** — Reconciliation, Proof Reports, Score Summary, Sign-Off workflow
 - **Sign-off workflow** (Quality page) — Enter name and role, click Sign Off. A confirmation dialog asks "Are you sure? Your information will be saved as signing off on these changes" with Confirm or Cancel. Sign-offs are stored in `artifacts/signoff.json` with name, role, date, time, score, status, and project. Multiple sign-offs are supported (e.g., tech lead, compliance officer, program manager). Sign-off history is displayed with color-coded status cards. The Quality button in the lifecycle bar turns green (custom HTML badge) after sign-off, and stays default otherwise. A red "NOT SIGNED OFF" banner is shown until the first sign-off, then switches to green with sign-off details.
+- **Dynamic dataset dropdown** — The dataset selector reads available datasets from `project.yaml` instead of using hardcoded values. Any datasets configured in the project are automatically available in the dropdown.
 - **Confidence gauge** — Traffic-light score visualization for the selected run
 - **Run selector** — Browse all validation runs from the sidebar
 - **Readiness Report** (pre-migration) — Schema compatibility findings
