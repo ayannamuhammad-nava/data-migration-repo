@@ -620,5 +620,60 @@ class {class_name}:
 '''
 
 
+@cli.command()
+@click.argument("name")
+@click.option("--data", "-d", required=True, help="Path to directory containing COBOL data files (SQL, copybooks)")
+@click.option("--om-host", default="http://localhost:8585", help="OpenMetadata server URL")
+def bootstrap(name, data, om_host):
+    """One-command project setup from COBOL data files.
+
+    Scans the data directory, creates the project, loads data into PostgreSQL,
+    registers tables in OpenMetadata, and configures project.yaml.
+
+    After bootstrap, run: dm discover --enrich -p projects/<name>
+    """
+    from dm.bootstrap import run_bootstrap
+
+    project_dir = Path("projects") / name
+
+    # Run dm init if project doesn't exist
+    if not project_dir.exists():
+        ctx = click.get_current_context()
+        ctx.invoke(init, name=name)
+
+    click.echo(f"\n{'=' * 60}")
+    click.echo(f"  BOOTSTRAP: {name}")
+    click.echo(f"  Data: {data}")
+    click.echo(f"{'=' * 60}\n")
+
+    try:
+        result = run_bootstrap(
+            project_name=name,
+            data_path=data,
+            om_host=om_host,
+        )
+    except Exception as e:
+        click.echo(f"Bootstrap failed: {e}", err=True)
+        sys.exit(1)
+
+    click.echo(f"\n{'=' * 60}")
+    click.echo(f"  BOOTSTRAP COMPLETE")
+    click.echo(f"{'=' * 60}")
+    click.echo(f"  Project:    projects/{name}")
+    click.echo(f"  Tables:     {result['table_count']} ({', '.join(result['tables'])})")
+    click.echo(f"  SQL files:  {result['sql_files']}")
+    click.echo(f"  Copybooks:  {result['copybooks']}")
+    click.echo(f"  OM:         {'Registered' if result['om_registered'] else 'Not registered'}")
+    click.echo(f"{'=' * 60}")
+    click.echo(f"\n  Next steps:")
+    click.echo(f"    dm rationalize -p projects/{name}")
+    click.echo(f"    dm discover --enrich -p projects/{name}")
+    click.echo(f"    dm enrich -p projects/{name}")
+    click.echo(f"    dm generate-schema --all -p projects/{name}")
+    click.echo(f"    dm validate --phase pre --dataset {result['tables'][0]} -p projects/{name}")
+    click.echo(f"    dm dashboard -p projects/{name}")
+    click.echo()
+
+
 if __name__ == "__main__":
     cli()
