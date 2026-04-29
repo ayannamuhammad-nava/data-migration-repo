@@ -1,6 +1,8 @@
-# Data Migration Toolkit
+# Data Migration Toolkit — COBOL to PostgreSQL
 
-> Automated legacy-to-modern data migration with COBOL-aware column resolution, confidence scoring, interactive dashboard, and sign-off workflow.
+> Automated COBOL-to-PostgreSQL data migration with COBOL-aware column resolution, confidence scoring, interactive dashboard, and sign-off workflow.
+>
+> Built for migrating legacy COBOL/DB2/mainframe systems to modern PostgreSQL databases. Handles abbreviated field names, PII detection, schema normalization, and produces audit-ready proof reports with stakeholder sign-off.
 
 ## Getting Started in 5 Minutes
 
