@@ -177,6 +177,41 @@ This was the most significant issue. The toolkit's column matcher could not hand
 
 ## Enhancements
 
+### `dm bootstrap` — One-Command Project Setup
+
+**Files:** `dm/bootstrap.py`, `dm/cli.py`
+
+Added a new CLI command that replaces manual steps 3-6 (load data, register in OM, configure project) with a single command:
+
+```bash
+dm bootstrap my-project --data /path/to/cobol/files
+```
+
+**What it automates:**
+1. Scaffolds the project (`dm init`)
+2. Scans the data folder for SQL files and COBOL copybooks
+3. Parses CREATE TABLE statements to extract table/column definitions
+4. Parses copybook descriptions for field metadata
+5. Auto-detects the running PostgreSQL Docker container
+6. Creates `legacy_db` and `modern_db` databases
+7. Loads DDL and data into PostgreSQL
+8. Gets an OpenMetadata auth token
+9. Registers service, database, schema, and tables with column descriptions in OM
+10. Configures `project.yaml` with datasets, connections, and OM settings
+
+**Key features:**
+- Auto-detects PostgreSQL container by checking port 5432 mappings
+- Parses SQL comments (`-- PIC X(25) CONTACT-FIRST-NAME`) as column descriptions
+- Derives OM service/database names from project name
+- Handles `CREATE TABLE IF NOT EXISTS` and multi-row INSERT statements
+- Users just need their COBOL data folder and a project name — zero manual configuration
+
+### Dynamic Dataset Selection
+
+**File:** `dashboard.py`
+
+The Run New Validation dropdown in the sidebar now reads dataset names from `project.yaml` instead of a hardcoded list. Each project shows its own tables.
+
 ### Clickable Lifecycle Detail Pages
 
 **File:** `dashboard.py`
