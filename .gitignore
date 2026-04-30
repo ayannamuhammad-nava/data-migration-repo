@@ -8,7 +8,7 @@ build/
 
 # Project artifacts (generated at runtime)
 projects/*/artifacts/
-!projects/*/artifacts/signoff.json
+!projects/*/artifacts/signoff.log
 projects/*/metadata/
 projects/*/schemas/
 
