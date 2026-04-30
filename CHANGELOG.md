@@ -206,6 +206,24 @@ dm bootstrap my-project --data /path/to/cobol/files
 - Handles `CREATE TABLE IF NOT EXISTS` and multi-row INSERT statements
 - Users just need their COBOL data folder and a project name — zero manual configuration
 
+### Signoff Changed from JSON to Plain Text Log
+
+**Files:** `dashboard.py`, `.gitignore`
+
+Changed `signoff.json` to `signoff.log` — a plain text log file where each sign-off appends one line:
+
+```
+SIGNOFF | 2026-04-29 | 18:19:09 | Ayanna Muhammad | Data Migration Lead | 94.5/100 | GREEN | Customer Service
+```
+
+**Why:** A log file is easier to read, email, grep, and attach to audit packages than JSON. No parsing needed — anyone can open it and understand the sign-off history. The file is committed to git (excluded from the general `artifacts/` gitignore) so the audit trail is preserved in version control.
+
+### Repo Name in Sidebar
+
+**File:** `dashboard.py`
+
+The sidebar now shows the repo name (auto-detected from `git remote get-url origin`) below the project name, so users know which repository they're working in.
+
 ### Dynamic Dataset Selection
 
 **File:** `dashboard.py`
