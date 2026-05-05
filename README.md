@@ -22,21 +22,30 @@ The generated DDL, transform scripts, and mappings are **artifacts for your migr
 
 ---
 
-## Getting Started — 2 Steps
+## Getting Started
 
-### Step 1: Setup
 ```bash
 git clone https://github.com/ayannamuhammad-nava/data-migration-repo.git
 cd data-migration-repo
-./setup.sh --no-docker
+./setup.sh
 ```
 
-### Step 2: Launch and go
+This installs all dependencies and launches the dashboard at **http://localhost:8501**.
+
+Paste a mainframe repo URL (e.g., `https://github.com/aws-samples/aws-mainframe-modernization-carddemo.git`) and click **Run Migration Analysis**. The tool clones the repo, parses COBOL copybooks, profiles data, generates schemas for all 4 target platforms, validates, and loads the dashboard with results.
+
+### Prerequisites
+
+- Python 3.9+
+- pip
+- git
+
+### Manual install (if setup.sh doesn't work)
+
 ```bash
+pip3 install -r requirements.txt
 streamlit run dashboard.py
 ```
-
-Open **http://localhost:8501** — paste your mainframe repo URL, select a target platform, click **Run Migration Analysis**. The tool clones the repo, parses copybooks, profiles data, generates schemas for all 4 targets, validates, and loads the dashboard with results. No CLI needed.
 
 ### Alternative: CLI bootstrap
 
