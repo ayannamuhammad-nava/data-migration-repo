@@ -27,3 +27,13 @@ artifacts/
 metadata/.embeddings_cache.npz
 _source_repo/
 .dm_active_project
+.dm_show_latest_run
+
+# Generated metadata (created by pipeline, not source code)
+**/metadata/glossary.json
+**/metadata/mappings.json
+**/metadata/profiling_stats.json
+**/metadata/normalization_plan.json
+**/metadata/rationalization_report.*
+**/metadata/migration_scope.yaml
+**/metadata/abbreviations.yaml
