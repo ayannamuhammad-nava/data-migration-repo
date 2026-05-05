@@ -1,20 +1,15 @@
 # Python
 __pycache__/
 *.py[cod]
+*.pyo
 *.egg-info/
-.venv/
 dist/
 build/
 
-# Project artifacts (generated at runtime)
-projects/*/artifacts/
-!projects/*/artifacts/signoff.log
-projects/*/metadata/
-projects/*/schemas/
-
-# Environment
-.env
-*.env.local
+# Virtual environments
+.venv/
+venv/
+env/
 
 # IDE
 .idea/
@@ -26,5 +21,9 @@ projects/*/schemas/
 .DS_Store
 Thumbs.db
 
-# Docker volumes
-docker-volume/
+# Project artifacts (generated at runtime)
+artifacts/
+!**/artifacts/signoff.log
+metadata/.embeddings_cache.npz
+_source_repo/
+.dm_active_project
